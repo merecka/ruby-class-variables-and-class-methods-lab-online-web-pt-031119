@@ -5,6 +5,7 @@ class Song
   #Class Methods & variables
   @@count = 0
   @@genres = []
+  @@artists = []
 
   def self.count
     @@count
@@ -14,10 +15,15 @@ class Song
     @@genres.uniq
   end
 
+  def self.artists
+    @@arists.uniq
+  end
+
   #Instance Method & Variables
   def initialize(name, artist, genre)
     @@count += 1
     @@genres << genre
+    @@artists << artist
   end
 
 
