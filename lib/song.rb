@@ -1,8 +1,10 @@
+require 'pry'
+
 class Song
 
   attr_accessor :name, :artist, :genre
 
-  #Class Methods & variables
+  #Class Methods & Variables
   @@count = 0
   @@genres = []
   @@artists = []
@@ -16,15 +18,25 @@ class Song
   end
 
   def self.artists
-    @@arists.uniq
+    @@artists.uniq
+  end
+
+  def self.genre_count
+    genre_hash = {}
+    @@genres.uniq.collect do |x|
+      genre_hash = { x => @@genres.count(x) }
+    end
+    genre_hash
   end
 
   #Instance Method & Variables
   def initialize(name, artist, genre)
+    @name = name
+    @artist = artist
+    @genre = genre
     @@count += 1
     @@genres << genre
     @@artists << artist
   end
-
 
 end
