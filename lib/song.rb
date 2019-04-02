@@ -25,7 +25,7 @@ class Song
     genre_hash = {}
     binding.pry
     @@genres.uniq.collect do |x|
-      genre_hash = { x => @@genres.count(x) }
+      genre_hash[x] = @@genres.count(x)
     end
     genre_hash
   end
