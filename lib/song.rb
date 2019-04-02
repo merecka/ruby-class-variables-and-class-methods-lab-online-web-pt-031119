@@ -34,6 +34,7 @@ class Song
     @@artists.uniq.collect do |x|
       artist_hash[x] = @@artists.count(x)
     end
+    artist_hash
   end
 
   #Instance Method & Variables
